@@ -1,0 +1,127 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage[top=1.5cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} 
+
+\title{\Large An \textit{in silico} Time-Lapse Analysis of Lymphoid Tissue Development\\
+\Large In Preparation: Intended for submission to Nature Communications
+\date{}
+}
+\begin{document}
+
+\maketitle
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Initial level of chemoattractant expression at LTo differentiation]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/initialChemokineExpressionValue_ATestVelocity.pdf}
+   \label{results4:oatOT:initialChemoExpressionVel}
+ }\hfill
+ \subfloat[Saturation limit of chemoattractant expression]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/maxChemokineExpressionValue_ATestVelocity.pdf}
+   \label{results4:oatOT:maxChemoExpressionVel}
+ }\\ \noindent
+ \subfloat[Probability an LTi cell does not respond to chemokine expression]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/chemokineExpressionThreshold_ATestVelocity.pdf}
+   \label{results4:oatOT:chemoThresholdVel}
+ }\hfill
+ \subfloat[Probability a LTin/LTi and LTo cell form stable bind on contact]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/stableBindProbability_ATestVelocity.pdf}
+   \label{results4:oatOT:bindingVel}
+ }\\ \noindent
+ \subfloat[Maximum probability adhesion factors prolong cell contact]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/maxProbabilityOfAdhesion_ATestVelocity.pdf}
+   \label{results4:oatOT:maxAdhesionVel}
+ }\hfill
+ \subfloat[Level of adhesion factor expression per stable contact]{
+   \includegraphics[width=0.33\textwidth] {Results4/Cells_OAT/adhesionFactorExpressionSlope_ATestVelocity.pdf}
+   \label{results4:oatOT:adhesionExpressionVel}
+}\\ \noindent
+	
+\caption[Examination of Parameter Robustness Over Simulation Time: Velocity]{An examination of parameter robustness over simulation time: Cell Velocity}
+\label{results4:oatOTVel}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\subfloat[Initial level of chemoattractant expression at LTo differentiation]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/initialChemokineExpressionValue_ATestDisplacement.pdf}
+   \label{results4:oatOT:initialChemoExpressionDisp}
+ }\hfill
+ \subfloat[Saturation limit of chemoattractant expression]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/maxChemokineExpressionValue_ATestDisplacement.pdf}
+   \label{results4:oatOT:maxChemoExpressionDisp}
+ }\\ \noindent
+ \subfloat[Chemokine Level at which LTi chemotaxis occurs]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/chemokineExpressionThreshold_ATestDisplacement.pdf}
+   \label{results4:oatOT:chemoThresholdDisp}
+ }\hfill
+ \subfloat[Probability a LTin/LTi and LTo cell form stable bind on contact]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/stableBindProbability_ATestDisplacement.pdf}
+   \label{results4:oatOT:bindingDisp}
+ }\\ \noindent
+ \subfloat[Maximum probability adhesion factors prolong cell contact]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/maxProbabilityOfAdhesion_ATestDisplacement.pdf}
+   \label{results4:oatOT:maxAdhesionDisp}
+ }\hfill
+ \subfloat[Level of adhesion factor expression per stable contact]{
+   \includegraphics[width=0.38\textwidth] {Results4/Cells_OAT/adhesionFactorExpressionSlope_ATestDisplacement.pdf}
+   \label{results4:oatOT:adhesionExpressionDisp}
+}\\ \noindent
+
+\caption[Examination of Parameter Robustness Over Simulation Time: Displacement]{An examination of parameter robustness over simulation time: Cell displacement. The parameter values were perturbed independently as detailed in section \ref{mandms:oat}, and cell behaviour results captured at twelve hour intervals. These results were then compared to the baseline simulation using the Vargha-Delaney A-Test to determine the effect a change in parameter value has had on cell displacement. Performing this analysis at twelve hour intervals reveals if the change in parameter value has an effect at a certain timepoint.}
+\label{results4:oatOTDisp}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\subfloat[Initial level of chemoattractant expression at LTo differentiation]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/initialChemokineExpressionValue_OT.pdf}
+   \label{results4:lhcOT:initialChemoExpressionDisp}
+ }\hfill
+ \subfloat[Saturation limit of chemoattractant expression]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/maxChemokineExpressionValue_OT.pdf}
+   \label{results4:lhcOT:maxChemoExpressionDisp}
+ }\\ \noindent
+ \subfloat[Chemokine Level at which LTi chemotaxis occurs]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/chemokineExpressionThreshold_OT.pdf}
+   \label{results4:lhcOT:chemoThresholdDisp}
+ }\hfill
+ \subfloat[Probability a LTin/LTi and LTo cell form stable bind on contact]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/stableBindProbability_OT.pdf}
+   \label{results4:lhcOT:bindingDisp}
+ }\\ \noindent
+ \subfloat[Maximum probability adhesion factors prolong cell contact]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/maxProbabilityOfAdhesion_OT.pdf}
+   \label{results4:lhcOT:maxAdhesionDisp}
+ }\hfill
+ \subfloat[Level of adhesion factor expression per stable contact]{
+   \includegraphics[width=0.42\textwidth] {Results4/Cells_LHC/adhesionFactorExpressionSlope_OT.pdf}
+   \label{results4:lhcOT:adhesionExpressionDisp}
+}\\ \noindent
+
+\caption[Partial Rank Correlation Coefficient Analysis Over Simulation Time]{Partial Rank Correlation Coefficients (PRCC) for each parameter under examination, calculated at twelve hour intervals using the latin-hypercube analysis approach. Examining how the PRCC changes over time gives an indication of when a parameter begins to become influential in affecting cell velocity and displacement.}
+\label{results4:lhcOT}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\subfloat[Si measures for each parameter for the cell velocity response]{
+   \includegraphics[width=0.6\textwidth] {Results4/Cells_eFAST/Velocity_OT2.pdf}
+   \label{results4:efastOT:velocity}
+ }\\ \noindent
+ \subfloat[Si measures for each parameter for the cell displacement response]{
+   \includegraphics[width=0.6\textwidth] {Results4/Cells_eFAST/Displacement_OT2.pdf}
+   \label{results4:efastOT:displacement}
+ }\\ \noindent
+\caption[eFAST Sensitivity Indexes Over Simulation Time]{eFAST First-Order Sensitivity Index (Si) for each parameter of interest, calculated at twelve hour intervals. This shows the percentage of variance in simulation result at that time-point can be explained by a particular parameter.}
+\label{results4:lhcOT}
+\end{figure}
+
+
+\end{document}

@@ -1,0 +1,102 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>spartan (Simulation Parameter Analysis R Toolkit Application)</title>
+</head>
+<body>
+
+
+<h1 align="CENTER"><i>spartan</i> (<b>Simulation <b>P</b>arameter <b>A</b>nalysis <b>R</b> <b>T</b>oolkit <b>A</b>pplicatio<b>n</b>)</h1>
+<p align="center">Included within the submission:<br><i>spartan: A Comprehensive Tool for Understanding Uncertainty in Computer Simulation Results</i> <br><br>
+Kieran Alden, Mark Read, Paul S Andrews, Jon Timmis, Henrique Veiga-Fernandes, Mark C Coles</p>
+
+<table align="CENTER" width="800">
+<tbody><tr>
+<td><b>Skip to:</b></td>
+<td><a href="#About">About <i>spartan</i></a></td>
+<td><a href="#Tutorials">Tutorials</a></td>
+<td><a href="#Requirements">Requirements</a></td>
+<td><a href="#Downloads">Downloads</a></td>
+
+</tr>
+</tbody></table>
+
+<br><br><br>
+
+<table border="1" cellpadding="30">
+<tbody><tr>
+<td>
+<a name="About"><b>About <i>spartan</i></b></a>
+</td>
+
+<td>
+<i>spartan</i>, or (Simulation Parameter Analysis R Toolkit ApplicatioN) is an R package which aids the understanding of the effect aleatory and epistemic uncertainty have on the output
+from a simulation.<br><br>
+Computer simulations are becoming a popular technique to use in attempts to further our understanding of complex systems. This package provides code for four techniques described in available literature which aid the analysis of simulation results, at both single and multiple timepoints in the simulation run. The first technique addresses aleatory uncertainty in the system caused through inherent stochasticity, and determines the number of replicate runs necessary to generate a representative result. The second examines how robust a simulation is to parameter perturbation, through the use of a one-at-a-time parameter analysis technique. Thirdly, a latin hypercube based sensitivity analysis technique is included which can elucidate non-linear effects between parameters and indicate implications of epistemic uncertainty with reference to the system being modelled. Finally, a further sensitivity analysis technique, the extended Fourier Amplitude Sampling Test (eFAST) has been included to partition the variance in simulation results between input parameters, to determine the parameters which have a significant effect on simulation behaviour.
+</td>
+</tr>
+
+
+<tr>
+<td>
+<a name="Tutorials"><b>Tutorials</b></a>
+</td>
+
+<td>
+An installation guide and four tutorials have been made available to demonstrate how to use each of the available methods in the package.  These make use of the example data in the downloads section below. The example simulation results have been taken from an ongoing project which seeks to understand the formation of lymphoid tissue in the small intestine. This simulation outputs cell behaviour measures at various timepoints and measures describing the development of the tissue, which occurs through interactions between these cells.<br>
+<br>
+<A HREF="Install_spartan.pdf">Installing the <i>spartan</i> package</a><br><br>
+<A HREF="AA_Tutorial.pdf">Tutorial 1: Analysing Aleatory Uncertainty</a><br><br>
+<A HREF="OAT_Tutorial.pdf">Tutorial 2: Simulation Robustness to Parameter Perturbation</a><br><br>
+<A HREF="LHC_Tutorial.pdf">Tutorial 3: Identification of Non-Linear Effetcs Through Simultaneously Perturbing all Parameters</a><br><br>
+<A HREF="eFAST_Tutorial.pdf">Tutorial 4: Partitioning Output Variance between Input Parameters</a><br>
+<br>
+Do note that the idea of the tutorials is to demonstrate the application of the toolkit, and is not intended to act as a full introduction to using Sensitivity Analysis techniques in the analysis of simulation results. Where useful, links to further reading have been included.
+<br>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<a name="Requirements"><b>Requirements</b></a>
+</td>
+
+<td>
+Use of the <i>spartan</i> package requires the following:
+<ul>
+<li> The R statistical environment, version 2.13.1 or later.
+<li> The spartan R package, downloaded from the Comprehensive R Archive Network (CRAN) within R, or available here.
+<li> The lhs and gplots R packages, available for download from CRAN.
+<li> The example simulation data for the tutorials, available below
+<li> For this current version, simulation results in pre-processed to be in Comma Separated Value (CSV) or XML format
+</ul>
+
+
+</td>
+</tr>
+
+<tr>
+<td>
+<a name="Downloads"><b>Downloads</b></a>
+</td>
+
+<td>
+The <i>spartan</i> Package: <A HREF="spartan_1.2.tar.gz">Linux / Mac</A> | <A HREF="spartan_1.2.zip">Windows</A><br>
+<br>
+<A HREF="spartan-manual.pdf"><i>spartan</i> Manual<br>
+<br>
+<A HREF="AA_Tutorial_Nov12.tar.gz">Example Simulation Data for Tutorial 1</a><br>
+<br>
+<A HREF="OAT_Tutorial_Nov12.tar.gz">Example Simulation Data for Tutorial 2</a><br>
+<br>
+<A HREF="LHC_Tutorial_Nov12.tar.gz">Example Simulation Data for Tutorial 3</a><br>
+<br>
+<A HREF="eFAST_Tutorial_Nov12.tar.gz">Example Simulation Data for Tutorial 4</a><br>
+
+
+</td>
+</tr>
+
+</tbody></table>
+
+</body></html>

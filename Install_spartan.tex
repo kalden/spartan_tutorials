@@ -1,0 +1,72 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage[center,small]{caption}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} 
+
+\title{\huge \textbf{Installing the \textit{spartan} package for use in the R Statistical Environment}\\
+\date{}
+}
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+\noindent \textit{spartan}, or (\textbf{S}imulation \textbf{P}arameter \textbf{A}nalysis \textbf{R} \textbf{T}oolkit \textbf{A}pplicatio\textbf{N}) is an R package which aids the understanding of the effect aleatory and epistemic uncertainty have on the output from a simulation. 
+
+\section{The \textit{spartan} Package}
+\noindent Computer simulations are becoming a popular technique to use in attempts to further our understanding of complex systems. This package provides code for four techniques described in available literature which aid the analysis of simulation results, at both single and multiple timepoints in the simulation run. The first technique addresses aleatory uncertainty in the system caused through inherent stochasticity, and determines the number of replicate runs necessary to generate a representative result. The second examines how robust a simulation is to parameter perturbation, through the use of a one-at-a-time parameter analysis technique. Thirdly, a latin hypercube based sensitivity analysis technique is included which can elucidate non-linear effects between parameters and indicate implications of epistemic uncertainty with reference to the system being modelled. Finally, a further sensitivity analysis technique, the extended Fourier Amplitude Sampling Test (eFAST) has been included to partition the variance in simulation results between input parameters, to determine the parameters which have a significant effect on simulation behaviour.
+
+\section{Prerequisites}
+\begin{itemize}
+\item The R statistical environment, version 2.13.1 or later.
+\item The spartan R package, downloaded from the Comprehensive R Archive Network (CRAN) or from the project website.
+\item The lhs and gplots R packages, available for download from CRAN.
+\item The example simulation results, available from the project website.
+\item From version 1.2 of \textit{spartan}, simulation results can be in either CSV or XML format. For earlier versions, results must be pre-processed to be in CSV format.
+\end{itemize}
+
+\section{Installing the Package}
+\noindent There are two ways to install the \textit{spartan} package into your R environment:
+\begin{enumerate}
+\item \textbf{Linux/Mac: Download from the Website and Install From Source}\\
+\\
+Download the package from the project website. Open a terminal window and navigate to the directory where the spartan.tar.gz file has been saved. To install in the R default directory, type the following:
+\begin{verbatim}
+R CMD INSTALL spartan_1.2.tar.gz
+\end{verbatim}
+To install to a specific directory, type the following:
+\begin{verbatim}
+R CMD INSTALL spartan_1.2.tar.gz -l /path/to/directory/
+\end{verbatim}
+
+\item \textbf{Install Directly from CRAN}
+\\
+\\
+Open the R environment (Linux/Mac: type R in most cases, Windows: Open from Programs menu). Enter the following at the prompt:
+\begin{verbatim}
+install.packages("spartan")
+\end{verbatim}
+Or, to install to a specific directory, type the following:
+\begin{verbatim}
+install.packages("spartan",lib="/path/to/directory")
+\end{verbatim}
+
+\end{enumerate}
+
+\section{Loading the Package}
+\noindent To use the functionality of the package, declare the following at the top of your script
+\begin{verbatim}
+library(spartan)
+\end{verbatim}
+Or, if you have installed the package in another directory than R's default package store:
+\begin{verbatim}
+library(spartan,lib.loc="/path/to/directory")
+\end{verbatim}
+
+\end{document}

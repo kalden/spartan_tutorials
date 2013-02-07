@@ -1,0 +1,107 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage[center,small]{caption}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} 
+
+\title{\huge \textbf{Installing the SpartanV Java Interface for the \textit{spartan} R Package}\\
+\date{}
+}
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+\noindent \textit{spartan}, or (\textbf{S}imulation \textbf{P}arameter \textbf{A}nalysis \textbf{R} \textbf{T}oolkit \textbf{A}pplicatio\textbf{N}) is an R package which aids the understanding of the effect aleatory and epistemic uncertainty have on the output from a simulation. SpartanV is a Java based interface designed to ease the use of the \textit{spartan} package. This document details how SpartanV is installed. These instructions should be followed after the \textit{spartan} package has been installed.
+
+\section{Prerequisites}
+\begin{itemize}
+\item The R statistical environment, version 2.13.1 or later.
+\item The spartan R package, version 1.2 or later, downloaded from the Comprehensive R Archive Network (CRAN) or from the project website.
+\item The lhs, gplots, and XML R packages, available for download from CRAN.
+\item The spartanV package and executable script for your operating system, available for download from the project website.
+\end{itemize}
+
+\section{Installing SpartanV}
+
+\noindent SpartanV utilises the JRi Java/R Interface. More information on this interface can be seen at http://www.rforge.net/JRI/. This enables R calculations to be performed in Java. This acts in the opposite way to the rJava interface, which allows Java actions to be performed in R. However both are shipped together, and installed via the R CRAN repository.
+
+\begin{itemize}
+\item \textbf{Install SpartanV on Linux or Mac}\\
+
+\begin{enumerate}
+
+\item Unzip the SpartanV archive into a folder where you wish to run the SpartanV interface. This will extract the SpartanV Jar file, a bash shell script, and a number of images used by the interface. In our case, we extracted this to the folder \textit{/home/aldenkj/spartanV}
+\\
+
+\item Launch a terminal window, and launch the R Statistical Environment. At the prompt, type the following:
+\begin{verbatim}
+install.packages("rJava")
+\end{verbatim}
+Or, to install to a specific directory, type the following:
+\begin{verbatim}
+install.packages("spartan",lib="/path/to/directory")
+\end{verbatim}
+This will install the rJava and JRi packages used by SpartanV. Exit R (type \textit{quit()} ).
+
+\item Now to run SpartanV, we use a bash shell script. We have done this to make launching SpartanV easier, as a path variable and java library path need to be set. Firstly, a \textit{R\_HOME} path variable must be created that points to where your R installation can be found. Secondly, when launching the jar file, you must tell java where it can find the \textit{jri} folder within the rJava package you just installed. However, as long as you make sure the R\_HOME variable and java library path is set, you can launch the jar file from the command line without the script.\\
+\\
+In this case, we are going to use the bash shell script file. Open the Run\_SpartanV.bash file in a text editor, and change the \textit{R\_HOME} line to point to where the R installation is in your case, and set the java library path to point to where the \textit{jri}folder can be found in the rJava package.\\
+\\
+Close the file. You also need to change the script permissions such that the file can be executed (using \textit{chmod} or by right clicking on the file and choosing Properties -\textgreater Permissions.
+\\
+
+\item In a terminal window, run the bash script (type ./\textit{Run\_SpartanV.bash}). The GUI should load. You can then follow the other tutorials to learn how each analysis technique works.
+\\
+If you do not want to use the bash shell script, or can't, you can go without it as long as you set the paths correctly. In our installation, we typed the following at the command prompt. This may differ for some implementations:
+\begin{verbatim}
+export R_HOME=/usr/lib/R
+java -Djava.library.path=.:/usr/lib/R/site-library/rJava/jri -jar SpartanV.jar
+\end{verbatim}
+
+\item If you have problems, you may need to update the R links to your Java environment. You will need superuser rights for this. To do this, launch a terminal and type the following:
+\begin{verbatim}
+sudo R CMD javareconf
+\end{verbatim}
+
+\end{enumerate}
+
+\item \textbf{Install SpartanV on Windows}\\
+
+\begin{enumerate}
+
+\item Unzip the SpartanV archive into a folder where you wish to run the SpartanV interface. This will extract the SpartanV Jar file, a batch shell script, and a number of images used by the interface. In our case, we extracted this to the folder \textit{C:$\backslash$ Users $\backslash$ aldenkj $\backslash$ Downloads $\backslash$ SpartanV }
+\\
+
+\item Launch the R Statistical Environment (Start Menu -> Programs -> R). At the prompt, type the following:
+\begin{verbatim}
+install.packages("rJava")
+\end{verbatim}
+Or, to install to a specific directory, type the following:
+\begin{verbatim}
+install.packages("spartan",lib="/path/to/directory")
+\end{verbatim}
+This will install the rJava and JRi packages used by SpartanV. Exit R.
+\\
+
+\item You will now need to change the batch shell script that was extracted from the zip folder. Run notepad, and open the RunSpartanWin file. We are going to set three of the paths in this file:
+
+\begin{itemize}
+\item The first is R\_HOME. You need to set this to where the R installation is on your system. In our case, this was the folder R-2.15.2, containing the folders bin, etc, include, library, and so on. Find where this folder is on your system and change this path.
+\item The next adds a path to R to the windows PATH variable. Note in the script this contains x64 as we use 64-bit R. If you also use this, you shouldn't have to change this. If your machine is 32 bit, you will have to remove the x64 from this line.
+\item The final line runs the SpartanV application. You will note that there is a java.library.path on this line. You need to change this to where R installed the rJava package. In our case, this was inside the R installation folder, but this will differ depending on implementation. Find where R installed rJava to on your machine, and correct this path such that it points to the jri directory within the rJava folder.
+\end{itemize}
+
+\item Save the file. Now you should be able to run SpartanV by double clicking on the batch script file RunSpartanWin.
+
+\end{enumerate}
+
+
+\end{itemize}
+
+\end{document}
